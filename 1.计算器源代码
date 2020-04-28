@@ -1,1 +1,191 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace 计算器
+{
+    public partial class Form1 : Form
+    {
+        string a, b, q, ac;
+        int c = 0, d = 0, n = 0, p = 0, m = 0;
+
+        double temp1 = -1;
+        int pos = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void addNum(int num)
+        {
+            textBox1.Text = textBox1.Text + num.ToString();
+            if (c > 0)
+            {
+                textBox1.Text = "";
+                a = num.ToString();
+                b = b + a;
+                textBox1.Text = b;
+            }
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addNum(1);
+            n++;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addNum(2);
+            n++;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            addNum(3);
+            n++;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addNum(4);
+            n++;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            pos = 2;
+            temp1 = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = temp1 + "-";
+            c++;
+            p = 0;
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            pos = 3;
+            temp1 = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = temp1 + "*";
+            c++;
+            p = 0;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            pos = 4;
+            temp1 = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = temp1 + "/";
+            c++;
+            p = 0;
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            addNum(5);
+            n++;
+        }
+
+       
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            addNum(6);
+            n++;
+        }
+
+        
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            addNum(7);
+            n++;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            addNum(8);
+            n++;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            addNum(9);
+            n++;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            addNum(0);
+            n++;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            pos = 1;
+            temp1 = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = temp1 + "+";
+            d++;
+            c++;
+            p = 0;
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            double temp2 = Convert.ToDouble(b);
+
+            switch (pos)
+            {
+
+                case 1:
+                    textBox1.Text = (temp1 + temp2).ToString();
+                    break;
+                case 2:
+                    textBox1.Text = (temp1 - temp2).ToString();
+                    break;
+                case 3:
+                    textBox1.Text = (temp1 * temp2).ToString();
+                    break;
+                case 4:
+                    textBox1.Text = (temp1 / temp2).ToString();
+                    break;
+            }
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            temp1 = 0;
+            pos = 0;
+            b = "";
+            a = "";
+            n = 0;
+            c = 0;
+            p = 0;
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (p == 0)
+                textBox1.Text = textBox1.Text + ".";
+            p++;
+            m++;
+            if (c > 0)
+            {
+                b = b + ".";
+            }
+
+
+        }
+
+    }
+    }
 
